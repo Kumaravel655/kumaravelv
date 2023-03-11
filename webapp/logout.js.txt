@@ -1,0 +1,18 @@
+$(document).ready(function() {
+  // Listen for click event on logout button
+  $('#logout-btn').click(function(e) {
+    e.preventDefault();
+    // Send Ajax request to logout.php script
+    $.ajax({
+      url: 'logout.php',
+      method: 'GET',
+      success: function(response) {
+        // Redirect to login page
+        window.location.href = 'login.php';
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    });
+  });
+});
